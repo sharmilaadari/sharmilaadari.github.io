@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sharmila Adari — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{background:#0c0c0c;color:#f0ede8;font-family:'Inter',system-ui,sans-serif;font-size:17px;overflow-x:hidden;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:#111;}
+::-webkit-scrollbar-thumb{background:#b47fff;border-radius:4px;}
+
+/* NAV */
+nav{
+ position:fixed;top:0;left:0;right:0;z-index:999;
+ display:flex;justify-content:space-between;align-items:center;
+ padding:16px 60px;
+ background:rgba(12,12,12,0.95);backdrop-filter:blur(20px);
+ border-bottom:1px solid #1e1e1e;
+}
+.logo{font-family:'Caveat',cursive;font-size:1.4rem;font-weight:700;color:#b47fff;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-family:'Space Mono',monospace;font-size:0.67rem;color:#555;text-decoration:none;text-transform:uppercase;letter-spacing:2px;transition:color 0.2s;}
+.nav-links a:hover{color:#f0ede8;}
+
+/* HERO */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:space-between;padding:120px 60px 80px;gap:60px;}
+.hero-left{flex:1;}
+.hero-tag{display:inline-block;font-family:'Space Mono',monospace;font-size:0.7rem;color:#7effd4;letter-spacing:3px;text-transform:uppercase;border:1px solid #7effd440;border-radius:4px;padding:5px 14px;margin-bottom:24px;}
+.hero-h1{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(3.2rem,5.5vw,5.6rem);font-weight:800;line-height:1.02;letter-spacing:-2px;}
+.hero-h1 span{color:#b47fff;}
+.hero-desc{margin-top:20px;font-size:1.12rem;color:#888;line-height:1.85;max-width:560px;}
+.hero-btns{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+.btn{padding:12px 28px;border-radius:6px;font-family:'Space Mono',monospace;font-size:0.73rem;font-weight:700;text-decoration:none;letter-spacing:1px;text-transform:uppercase;transition:all 0.2s;display:inline-block;}
+.btn-primary{background:#b47fff;color:#0c0c0c;}
+.btn-primary:hover{background:#c990ff;transform:translateY(-2px);}
+.btn-outline{background:transparent;color:#f0ede8;border:1px solid #333;}
+.btn-outline:hover{border-color:#b47fff;color:#b47fff;transform:translateY(-2px);}
+.hero-right{position:relative;flex-shrink:0;width:280px;height:280px;}
+.avatar-ring{position:absolute;inset:-8px;border-radius:50%;background:conic-gradient(#b47fff,#5bc8f5,#7effd4,#f5c842,#b47fff);animation:spin 6s linear infinite;}
+.avatar-mask{position:absolute;inset:3px;border-radius:50%;background:#0c0c0c;}
+.hero-right img{position:absolute;inset:10px;width:calc(100% - 20px);height:calc(100% - 20px);border-radius:50%;object-fit:cover;object-position:top;z-index:2;}
+@keyframes spin{to{transform:rotate(360deg);}}
+.hero-stats{display:flex;justify-content:center;gap:0;background:#151515;border:1px solid #222;border-radius:12px;overflow:hidden;margin-top:40px;}
+.stat{padding:14px 28px;text-align:center;border-right:1px solid #222;}
+.stat:last-child{border-right:none;}
+.stat-num{font-family:'Bricolage Grotesque',sans-serif;font-size:1.4rem;font-weight:800;color:#b47fff;}
+.stat-lbl{font-size:0.62rem;color:#555;text-transform:uppercase;letter-spacing:1px;font-family:'Space Mono',monospace;margin-top:2px;}
+
+/* SECTIONS */
+section{padding:80px 60px;}
+.sec-pre{font-family:'Space Mono',monospace;font-size:0.7rem;color:#b47fff;letter-spacing:4px;text-transform:uppercase;display:block;margin-bottom:10px;}
+.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-1.5px;margin-bottom:52px;}
+.sec-title span{color:#b47fff;}
+.divider{border:none;border-top:1px solid #1e1e1e;margin:0 60px;}
+
+/* SKILLS */
+#skills{background:#0f0f0f;}
+.skills-grid{display:flex;flex-wrap:wrap;gap:12px;}
+.pill{padding:8px 20px;border-radius:50px;border:1.5px solid;font-size:0.85rem;font-weight:600;background:transparent;transition:all 0.2s;cursor:default;display:inline-block;}
+.pill:hover{transform:translateY(-2px);}
+.sp{border-color:#b47fff;color:#b47fff;} .sp:hover{background:rgba(180,127,255,.08);}
+.sc{border-color:#5bc8f5;color:#5bc8f5;} .sc:hover{background:rgba(91,200,245,.08);}
+.sg{border-color:#7effd4;color:#7effd4;} .sg:hover{background:rgba(126,255,212,.08);}
+.so{border-color:#f5c842;color:#f5c842;} .so:hover{background:rgba(245,200,66,.08);}
+.sk{border-color:#ff7eb3;color:#ff7eb3;} .sk:hover{background:rgba(255,126,179,.08);}
+.sw{border-color:#aaa;color:#aaa;} .sw:hover{background:rgba(170,170,170,.08);}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px;}
+.proj-card{background:#111;border:1px solid #1e1e1e;border-radius:16px;padding:0;overflow:hidden;transition:border-color 0.3s,transform 0.3s;display:flex;flex-direction:column;}
+.proj-card:hover{transform:translateY(-4px);}
+.proj-card.purple:hover{border-color:#b47fff50;}
+.proj-card.cyan:hover{border-color:#5bc8f550;}
+.proj-card.green:hover{border-color:#7effd450;}
+.proj-card.gold:hover{border-color:#f5c84250;}
+.proj-accent{height:3px;}
+.proj-accent.purple{background:linear-gradient(90deg,#b47fff,#7c4dbd);}
+.proj-accent.cyan{background:linear-gradient(90deg,#5bc8f5,#2196f3);}
+.proj-accent.green{background:linear-gradient(90deg,#7effd4,#00bfa5);}
+.proj-accent.gold{background:linear-gradient(90deg,#f5c842,#ff9800);}
+
+/* project image */
+.proj-img{width:100%;height:200px;object-fit:cover;object-position:center;display:block;border-bottom:1px solid #1a1a1a;}
+.proj-body{padding:24px;flex:1;display:flex;flex-direction:column;gap:12px;}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;}
+.proj-icon{font-size:1.8rem;line-height:1;}
+.proj-badge{font-family:'Space Mono',monospace;font-size:0.58rem;padding:3px 10px;border-radius:4px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;margin-top:4px;}
+.badge-pub{background:#7effd420;color:#7effd4;border:1px solid #7effd440;}
+.badge-web{background:#b47fff20;color:#b47fff;border:1px solid #b47fff40;}
+.badge-ml{background:#5bc8f520;color:#5bc8f5;border:1px solid #5bc8f540;}
+.proj-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.35rem;font-weight:800;line-height:1.2;}
+.proj-sub{font-size:0.75rem;color:#555;font-family:'Space Mono',monospace;letter-spacing:1px;margin-top:-4px;}
+.proj-desc{font-size:1rem;color:#999;line-height:1.8;flex:1;}
+.proj-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;}
+.tag{font-size:0.7rem;padding:3px 10px;border-radius:4px;background:#1a1a1a;color:#666;border:1px solid #2a2a2a;font-family:'Space Mono',monospace;}
+
+/* research full width */
+.proj-card.research{grid-column:1/-1;}
+.research-inner{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.research-img-col{position:relative;overflow:hidden;}
+.research-img-col img{width:100%;height:100%;object-fit:cover;object-position:center;min-height:260px;display:block;}
+.research-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(126,255,212,0.15),rgba(12,12,12,0.7));}
+.research-badge-float{position:absolute;top:16px;left:16px;font-family:'Space Mono',monospace;font-size:0.6rem;padding:4px 12px;border-radius:4px;background:#0c0c0c;color:#7effd4;border:1px solid #7effd440;letter-spacing:1px;text-transform:uppercase;}
+.research-text-col{padding:28px;}
+.research-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px;}
+.metric{background:#0f0f0f;border:1px solid #222;border-radius:10px;padding:12px;text-align:center;}
+.metric-val{font-family:'Bricolage Grotesque',sans-serif;font-size:1.3rem;font-weight:800;color:#7effd4;}
+.metric-lbl{font-size:0.6rem;color:#555;text-transform:uppercase;letter-spacing:1px;font-family:'Space Mono',monospace;margin-top:3px;}
+
+/* ACHIEVEMENTS */
+#achievements{background:#0f0f0f;}
+.ach-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+.ach-card{background:#111;border:1px solid #1e1e1e;border-radius:14px;overflow:hidden;transition:all 0.25s;}
+.ach-card:hover{transform:translateY(-3px);border-color:#b47fff40;}
+.ach-img{width:100%;height:160px;object-fit:cover;object-position:center;display:block;}
+.ach-body{padding:18px;display:flex;gap:14px;align-items:flex-start;}
+.ach-icon{font-size:1.6rem;flex-shrink:0;line-height:1;}
+.ach-title{font-family:'Bricolage Grotesque',sans-serif;font-size:1.05rem;font-weight:700;color:#f0ede8;margin-bottom:4px;}
+.ach-sub{font-size:0.88rem;color:#666;line-height:1.55;}
+.ach-rank{display:inline-block;font-family:'Space Mono',monospace;font-size:0.58rem;padding:2px 8px;border-radius:4px;background:#b47fff20;color:#b47fff;border:1px solid #b47fff30;letter-spacing:1px;text-transform:uppercase;margin-top:6px;}
+
+/* CERTIFICATIONS */
+.cert-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.cert-card{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:20px 22px;display:flex;align-items:center;gap:14px;transition:all 0.2s;}
+.cert-card:hover{border-color:#7effd440;transform:translateY(-2px);}
+.cert-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.cert-name{font-size:1rem;font-weight:600;color:#f0ede8;}
+.cert-org{font-size:0.72rem;color:#555;font-family:'Space Mono',monospace;margin-top:3px;letter-spacing:1px;}
+
+/* LEADERSHIP */
+#leadership{background:#0f0f0f;}
+.lead-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
+.lead-card{background:#111;border:1px solid #1e1e1e;border-radius:14px;overflow:hidden;transition:all 0.25s;}
+.lead-card:hover{transform:translateY(-3px);border-color:#5bc8f540;}
+.lead-img{width:100%;height:180px;object-fit:cover;object-position:center;display:block;border-bottom:1px solid #1a1a1a;}
+.lead-body{padding:22px;}
+.lead-role-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin-bottom:8px;}
+.lead-role{font-family:'Bricolage Grotesque',sans-serif;font-size:1.15rem;font-weight:700;color:#f0ede8;line-height:1.3;}
+.lead-period{font-family:'Space Mono',monospace;font-size:0.58rem;color:#5bc8f5;border:1px solid #5bc8f540;border-radius:4px;padding:3px 8px;letter-spacing:1px;white-space:nowrap;flex-shrink:0;margin-top:2px;}
+.lead-org{font-size:0.78rem;color:#b47fff;font-weight:600;margin-bottom:10px;letter-spacing:0.5px;}
+.lead-desc{font-size:0.96rem;color:#777;line-height:1.75;}
+.lead-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.chip{font-size:0.68rem;padding:3px 10px;border-radius:4px;background:#1a1a1a;color:#888;border:1px solid #252525;font-family:'Space Mono',monospace;}
+
+/* CONTACT */
+#contact{text-align:center;}
+.contact-desc{font-size:1.02rem;color:#666;max-width:480px;margin:0 auto 48px;line-height:1.8;}
+.contact-links{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:700px;margin:0 auto;}
+.cl{background:#111;border:1px solid #1e1e1e;border-radius:12px;padding:20px;display:flex;flex-direction:column;align-items:center;gap:10px;text-decoration:none;transition:all 0.2s;}
+.cl:hover{transform:translateY(-3px);}
+.cl.cl-g:hover{border-color:#7effd450;} .cl.cl-p:hover{border-color:#b47fff50;} .cl.cl-w:hover{border-color:#55555550;}
+.cl-icon{font-size:1.6rem;}
+.cl-lbl{font-family:'Space Mono',monospace;font-size:0.62rem;color:#555;letter-spacing:2px;text-transform:uppercase;}
+.cl-val{font-size:0.85rem;font-weight:600;margin-top:2px;word-break:break-all;text-align:center;}
+.cl.cl-g .cl-val{color:#7effd4;} .cl.cl-p .cl-val{color:#b47fff;} .cl.cl-w .cl-val{color:#f0ede8;}
+
+footer{padding:28px 60px;border-top:1px solid #1e1e1e;display:flex;justify-content:space-between;align-items:center;font-family:'Space Mono',monospace;font-size:0.67rem;color:#444;letter-spacing:1.5px;text-transform:uppercase;}
+
+@media(max-width:900px){
+ nav{padding:14px 20px;} .nav-links{display:none;}
+ #hero{flex-direction:column;padding:100px 24px 60px;text-align:center;}
+ .hero-right{width:200px;height:200px;} .hero-btns{justify-content:center;}
+ section{padding:60px 24px;} .divider{margin:0 24px;}
+ .research-inner{grid-template-columns:1fr;} .research-metrics{grid-template-columns:repeat(2,1fr);}
+ .contact-links{grid-template-columns:1fr;} footer{flex-direction:column;gap:10px;text-align:center;padding:20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="logo"> Sharmila Adari</div>
+ <ul class="nav-links">
+ <li><a href="#skills">Skills</a></li>
+ <li><a href="#projects">Projects</a></li>
+ <li><a href="#achievements">Achievements</a></li>
+ <li><a href="#certifications">Certs</a></li>
+ <li><a href="#leadership">Leadership</a></li>
+ <li><a href="#contact">Contact</a></li>
+ </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+ <div class="hero-left">
+ <span class="hero-tag">Open to Work · Full Stack Developer</span>
+ <h1 class="hero-h1">Hi, I'm<br><span>Sharmila Adari</span></h1>
+ <p class="hero-desc">Computer Science undergraduate at Vignan's IEW · GPA 8.44. I build full-stack web applications, publish deep learning research, and lead technical communities. Passionate about clean code that solves real problems.</p>
+ <div class="hero-btns">
+ <a href="#projects" class="btn btn-primary">View Projects</a>
+ <a href="/cdn-cgi/l/email-protection#bbc8d3dac9d6d2d7dadadfdac9d28a83fbdcd6dad2d795d8d4d6" class="btn btn-outline">Get In Touch</a>
+ </div>
+ </div>
+ <div class="hero-right">
+ <div class="avatar-ring"></div>
+ <div class="avatar-mask"></div>
+ <img src="profile pic.jpg" alt="Sharmila Adari">
+ </div>
+</section>
+
+<div style="display:flex;justify-content:center;padding:0 60px 60px;">
+ <div class="hero-stats">
+ <div class="stat"><div class="stat-num">8.44</div><div class="stat-lbl">GPA</div></div>
+ <div class="stat"><div class="stat-num">3+</div><div class="stat-lbl">Projects</div></div>
+ <div class="stat"><div class="stat-num">6+</div><div class="stat-lbl">Awards</div></div>
+ </div>
+</div>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills">
+ <span class="sec-pre">Technical Stack</span>
+ <h2 class="sec-title">Skills &amp; <span>Technologies</span></h2>
+ <div class="skills-grid">
+ <span class="pill sp">Java</span>
+ <span class="pill sc">Python</span>
+ <span class="pill sg">JavaScript</span>
+ <span class="pill so">Node.js</span>
+ <span class="pill sk">Express.js</span>
+ <span class="pill sp">React.js</span>
+ <span class="pill sc">HTML5 &amp; CSS3</span>
+ <span class="pill sg">MongoDB</span>
+ <span class="pill so">MySQL</span>
+ <span class="pill sk">Deep Learning</span>
+ <span class="pill sp">EfficientNet</span>
+ <span class="pill sg">DSA &amp; Algorithms</span>
+ <span class="pill so">Git &amp; GitHub</span>
+ <span class="pill sk">PowerBI</span>
+ <span class="pill sw">UI / UX Design</span>
+ <span class="pill sp">REST APIs</span>
+ <span class="pill sc">MERN Stack</span>
+ </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects">
+ <span class="sec-pre">What I've Built</span>
+ <h2 class="sec-title">Projects &amp; <span>Research</span></h2>
+ <div class="projects-grid">
+
+ <!-- RESEARCH — full width -->
+ <div class="proj-card research green">
+ <div class="proj-accent green"></div>
+ <div class="research-inner">
+ <div class="research-text-col" style="padding:32px;border-right:1px solid #1a1a1a;">
+ <span class="proj-badge badge-ml" style="margin-bottom:14px;display:inline-block;"> Deep Learning · Medical AI</span>
+ <h3 class="proj-title" style="font-size:1.55rem;margin-bottom:10px;">OR-EffNet: Diabetic Retinopathy Severity Classification</h3>
+ <p class="proj-sub" style="margin-bottom:16px;">EfficientNet-B0 + Ordinal Regression · APTOS 2019 · EyePACS</p>
+ <p class="proj-desc">Proposed a severity-aware DR classification model combining EfficientNet-B0 with an ordinal regression head. Outperforms softmax-based baselines in severity consistency. Pipeline includes CLAHE contrast enhancement, RGB normalization &amp; circular cropping. Deployed as a Flask web app for real-time clinical inference.</p>
+ <div class="proj-tags" style="margin-top:14px;">
+ <span class="tag">EfficientNet-B0</span><span class="tag">Ordinal Regression</span>
+ <span class="tag">CLAHE</span><span class="tag">PyTorch</span>
+ <span class="tag">Flask</span><span class="tag">APTOS 2019</span><span class="tag">EyePACS</span>
+ </div>
+ <p style="font-size:0.75rem;color:#444;font-family:'Space Mono',monospace;margin-top:14px;line-height:1.6;">Co-authored · Vignan's Institute of Engineering for Women, Visakhapatnam</p>
+ </div>
+ <div class="research-text-col" style="padding:32px;">
+ <p style="font-family:'Space Mono',monospace;font-size:0.65rem;color:#b47fff;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;">Model Performance</p>
+ <div class="research-metrics">
+ <div class="metric"><div class="metric-val">80%</div><div class="metric-lbl">Test Accuracy</div></div>
+ <div class="metric"><div class="metric-val">0.9028</div><div class="metric-lbl">Macro AUC</div></div>
+ <div class="metric"><div class="metric-val">0.63</div><div class="metric-lbl">Macro F1</div></div>
+ <div class="metric"><div class="metric-val">0.61</div><div class="metric-lbl">QWK Score</div></div>
+ </div>
+ <div style="margin-top:20px;padding:16px;background:#0c0c0c;border-radius:10px;border:1px solid #1e1e1e;">
+ <p style="font-size:0.68rem;color:#7effd4;font-family:'Space Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">Key Innovation</p>
+ <p style="font-size:0.86rem;color:#888;line-height:1.7;">Replaced conventional softmax classifiers with an ordinal regression head to explicitly model the ranked clinical stages — No DR &rarr; Mild &rarr; Moderate &rarr; Severe &rarr; Proliferative — improving severity consistency under class imbalance.</p>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- FINDIT -->
+ <div class="proj-card purple">
+ <div class="proj-accent purple"></div>
+ <div class="proj-body">
+ <span class="proj-badge badge-web" style="margin-bottom:4px;display:inline-block;">Full Stack · MERN</span>
+ <h3 class="proj-title">FindIt — Lost &amp; Found Portal</h3>
+ <p class="proj-sub">MongoDB · Express · React · Node.js</p>
+ <p class="proj-desc">Campus lost &amp; found system with student authentication, faculty verification, item posting with images, smart filtering, and an AI-powered chatbot for real-time assistance and query resolution.</p>
+ <div class="proj-tags">
+ <span class="tag">MERN Stack</span><span class="tag">JWT Auth</span>
+ <span class="tag">AI Chatbot</span><span class="tag">REST API</span>
+ </div>
+ </div>
+ </div>
+
+ <!-- CIVIC REPORTER -->
+ <div class="proj-card cyan">
+ <div class="proj-accent cyan"></div>
+ <div class="proj-body">
+ <span class="proj-badge badge-web" style="margin-bottom:4px;display:inline-block;">Full Stack · MERN</span>
+ <h3 class="proj-title">Crowdsourced Civic Issue Reporter</h3>
+ <p class="proj-sub">MongoDB · Express · React · Node.js</p>
+ <p class="proj-desc">Citizens report civic issues like potholes, broken streetlights &amp; garbage problems. Transparent crowdsourced tracking platform connecting citizens with local authorities for faster resolution.</p>
+ <div class="proj-tags">
+ <span class="tag">MERN Stack</span><span class="tag">Geo-tagging</span>
+ <span class="tag">Issue Tracking</span><span class="tag">Crowdsourcing</span>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<hr class="divider">
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+ <span class="sec-pre">Recognition</span>
+ <h2 class="sec-title">Achievements &amp; <span>Awards</span></h2>
+ <div class="ach-grid">
+
+ <div class="ach-card">
+ <img class="ach-img" src="gdg 23 24.jpeg" alt="GDG">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">AIR 1 — Generative AI Study Jams</div>
+ <div class="ach-sub">All India Rank 1 as Tier-1 Achiever in GDG's Generative AI Study Jams.</div>
+ <span class="ach-rank">GDG · National</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="ach-card">
+ <img class="ach-img" src="talentio.jpeg" alt="Coding Competition">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">1st Place — Talentio Coding</div>
+ <div class="ach-sub">Ranked 1st among 300+ participants in a competitive coding challenge.</div>
+ <span class="ach-rank">300+ Participants</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="ach-card">
+ <img class="ach-img" src="mongodb.jpeg" alt="Flipkart GRiD">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">Speaker at Winter Break Program</div>
+ <div class="ach-sub">Conducted an introductory workshop on MongoDB</div>
+ <span class="ach-rank">GDG · 2023</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="ach-card">
+ <img class="ach-img" src="techritz.jpeg" alt="Techritz">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">Top 3 Nationally — Techritz 2k23</div>
+ <div class="ach-sub">Top 3 teams at a national-level hackathon held at Techritz 2k23.</div>
+ <span class="ach-rank">National Level</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="ach-card">
+ <img class="ach-img" src="sih hackathon.jpg" alt="SIH">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">Smart India Hackathon — Qualified 3x</div>
+ <div class="ach-sub">Qualified for the second round of SIH three consecutive times.</div>
+ <span class="ach-rank">SIH · 3 Times</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="ach-card">
+ <img class="ach-img" src="anchoring.jpg" alt="Debate">
+ <div class="ach-body">
+ <div class="ach-icon"></div>
+ <div>
+ <div class="ach-title">1st Prize — Technical Debate</div>
+ <div class="ach-sub">Won first prize at a college-level technical debate competition.</div>
+ <span class="ach-rank">College Level</span>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<hr class="divider">
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+ <span class="sec-pre">Verified Learning</span>
+ <h2 class="sec-title">Certifications</h2>
+ <div class="cert-grid">
+ <div class="cert-card"><div class="cert-dot" style="background:#7effd4;"></div><div><div class="cert-name">Programming in Java</div><div class="cert-org">NPTEL · Top 5%</div></div></div>
+ <div class="cert-card"><div class="cert-dot" style="background:#5bc8f5;"></div><div><div class="cert-name">Python for Data Science</div><div class="cert-org">NPTEL · Top 5%</div></div></div>
+ <div class="cert-card"><div class="cert-dot" style="background:#b47fff;"></div><div><div class="cert-name">HTML5, CSS3, JavaScript, Node.js, Express.js</div><div class="cert-org">Infosys Springboard</div></div></div>
+ <div class="cert-card"><div class="cert-dot" style="background:#f5c842;"></div><div><div class="cert-name">Responsive Web Design</div><div class="cert-org">freeCodeCamp</div></div></div>
+ <div class="cert-card"><div class="cert-dot" style="background:#ff7eb3;"></div><div><div class="cert-name">Advanced Software Engineering Job Simulation</div><div class="cert-org">Walmart · Forage</div></div></div>
+ </div>
+</section>
+
+<hr class="divider">
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+ <span class="sec-pre">Beyond the Code</span>
+ <h2 class="sec-title">Leadership &amp; <span>Community</span></h2>
+ <div class="lead-grid">
+
+ <div class="lead-card">
+ <img class="lead-img" src="gdg core team.jpg" alt="GDG Core Team">
+ <div class="lead-body">
+ <div class="lead-role-row">
+ <div class="lead-role">Tech Lead</div>
+ <span class="lead-period">2024 – 25</span>
+ </div>
+ <div class="lead-org">Google Developer Group (GDG)</div>
+ <div class="lead-desc">Led the technical division. Co-organized HackHers — a 24-hour all-women hackathon with 200+ participants. Delivered Winter Break workshop for 150+ students.</div>
+ <div class="lead-chips">
+ <span class="chip">HackHers · 200+ Participants</span>
+ <span class="chip">150+ Workshop Attendees</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="lead-card">
+ <img class="lead-img" src="hackathon.jpg" alt="IIC HackPrism">
+ <div class="lead-body">
+ <div class="lead-role-row">
+ <div class="lead-role">Lead / Entrepreneurship Officer</div>
+ <span class="lead-period">2023 – 25</span>
+ </div>
+ <div class="lead-org">Institution Innovation Cell (IIC)</div>
+ <div class="lead-desc">Organized HackPrism — national-level hackathon with 150+ participants. Conducted 2 Ideathons and mentored peers through project ideation.</div>
+ <div class="lead-chips">
+ <span class="chip">HackPrism · 150+ Teams</span>
+ <span class="chip">2 Ideathons</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="lead-card">
+ <img class="lead-img" src="campaigning.jpg" alt="GDSC PR">
+ <div class="lead-body">
+ <div class="lead-role-row">
+ <div class="lead-role">PR Manager</div>
+ <span class="lead-period">2023 – 24</span>
+ </div>
+ <div class="lead-org">Google Developer Student Club (GDSC)</div>
+ <div class="lead-desc">Managed community outreach and communications, boosting event participation by 40% through targeted engagement strategies across campus networks.</div>
+ <div class="lead-chips">
+ <span class="chip">+40% Event Participation</span>
+ <span class="chip">Campus Outreach</span>
+ </div>
+ </div>
+ </div>
+
+ <div class="lead-card">
+ <img class="lead-img" src="independence day celebrations nss voluteering.jpg" alt="NSS">
+ <div class="lead-body">
+ <div class="lead-role-row">
+ <div class="lead-role">NSS Leader</div>
+ <span class="lead-period">2022 – 26</span>
+ </div>
+ <div class="lead-org">National Service Scheme (NSS)</div>
+ <div class="lead-desc">Coordinated 5+ social service initiatives — Independence Day, plantation drives, and community volunteering programs, mobilizing 100+ volunteers.</div>
+ <div class="lead-chips">
+ <span class="chip">100+ Volunteers</span>
+ <span class="chip">5+ Initiatives</span>
+ </div>
+ </div>
+ </div>
+
+ </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact">
+ <span class="sec-pre">Let's Talk</span>
+ <h2 class="sec-title" style="margin-bottom:16px;">Get In <span>Touch</span></h2>
+ <p class="contact-desc">I'm actively looking for full-time software development roles. If you're building something great and need someone who codes, leads, and cares — let's connect.</p>
+ <div class="contact-links">
+ <a href="/cdn-cgi/l/email-protection#b4c7dcd5c6d9ddd8d5d5d0d5c6dd858cf4d3d9d5ddd89ad7dbd9" class="cl cl-g">
+ <span class="cl-icon"></span>
+ <span class="cl-lbl">Email</span>
+ <span class="cl-val"><span class="__cf_email__" data-cfemail="1f6c777e6d7276737e7e7b7e6d762e275f78727e7673317c7072">[email&#160;protected]</span></span>
+ </a>
+ <a href="https://linkedin.com/in/sharmila-adari-05971b259" target="_blank" class="cl cl-p">
+ <span class="cl-icon"></span>
+ <span class="cl-lbl">LinkedIn</span>
+ <span class="cl-val">sharmila-adari-05971b259</span>
+ </a>
+ <a href="https://github.com/sharmilaadari" target="_blank" class="cl cl-w">
+ <span class="cl-icon"></span>
+ <span class="cl-lbl">GitHub</span>
+ <span class="cl-val">github.com/sharmilaadari</span>
